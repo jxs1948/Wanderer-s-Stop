@@ -32,6 +32,7 @@ app.set('view engine', 'pug');
 // Body Parser Middleware
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
+
 // parse application/json
 app.use(bodyParser.json());
 
@@ -85,8 +86,7 @@ app.get('/', function(req, res){
 });
 
 // Route Files
-let articles = require('./routes/article');
-
+let articles = require('./routes/articles');
 app.use('/articles', articles);
 
 

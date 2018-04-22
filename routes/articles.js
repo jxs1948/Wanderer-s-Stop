@@ -4,20 +4,6 @@ const router = express.Router();
 // Bring in article Models
 let Article = require('../models/article');
 
-// Get Single Article
-router.get('/:id', function(req, res){
-  Article.findById(req.params.id, function(err, article){
-       if(err){
-      console.log(err);
-      return;
-    } else {
-    res.render('article', {
-      article:article
-    });
-    }
-  });
-});
-
 // Add Route
 router.get('/add', function(req, res){
   res.render('add_article', {
@@ -102,5 +88,21 @@ router.delete('/:id', function(req, res){
     res.send('Success');
   });
 });
+
+
+// Get Single Article
+router.get('/:id', function(req, res){
+  Article.findById(req.params.id, function(err, article){
+       if(err){
+      console.log(err);
+      return;
+    } else {
+    res.render('article', {
+      article:article
+    });
+    }
+  });
+});
+
 
 module.exports = router;
