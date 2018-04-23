@@ -19,13 +19,14 @@ html
             li.nav-item.active
               a.nav-link(href='/') Home
                 span.sr-only (current)
-            li.nav-item
+            li.nav-item.active
               a.nav-link(href='/articles/add') Add Itinerary
-            li.nav-item
-              a.nav-link.disabled(href='#') Disabled
-          form.form-inline.my-2.my-lg-0
-            input.form-control.mr-sm-2(type='text', placeholder='Search', aria-label='Search')
-            button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+            
+          ul.navbar-nav.navbar-right
+            li.nav-item.active
+              a.nav-link.disabled(href='/users/register') Register
+            li.nav-item.active
+              a.nav-link.disabled(href='/users/login') Login
     .container
       != messages('message', locals)
       if errors
